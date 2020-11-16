@@ -1,0 +1,35 @@
+gdb 이용법
+run : 실행
+
+break or b : breakpoint 설정
+break <line/func name/func nmae:line/file:func/file:line>
+break <value> if <조건>
+tb : 임시 중단점
+
+disable/enable bp_number : 디버그 포인트 비활성/활성화
+clear bp_number :디버그 포인트 삭제
+
+r : 재시작
+k : 프로그램 종료
+
+s : 한줄 실행, 함수 존재시 내부로 들어가 수행
+n : 한줄 실행, 함수 존재시 수행하고 넘어감
+
+finish : 현재 함수 미수행
+info locals : 지역변수 전부 출력 
+info variables : 전역변수 전부 출력
+p val : 변수 val 출력
+
+layout src : 소스를 보여주면서 디버깅
+focus src/cmd : 포커스 이동
+
+refresh : 화면 새로고침
+define : 새로운 명령어 정의, 임시값임, 영구적으로 유저하고 싶을 시,저장하고 불러오거나 로컬폴더의 .gdbinit 수정할것 
+
+save breakpoints/gdb-index-tracepoint
+
+
+
+
+
+
