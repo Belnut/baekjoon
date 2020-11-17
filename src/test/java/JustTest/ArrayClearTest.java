@@ -3,6 +3,7 @@ package JustTest;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ArrayClearTest {
 
@@ -48,5 +49,42 @@ public class ArrayClearTest {
 
         System.out.println("arrayInt = " + timeArray + "ms");
         System.out.println("ArrayList<Integer> = " + timeArrayList + "ms");
+    }
+
+    @Test
+    public void HashMapArrayTest() {
+        int size = 100000;
+
+        long start = System.currentTimeMillis();
+        int[] test1 = new int[size];
+        for (int i = 0 ; i < size; i++) {
+            test1[i] = 1;
+        }
+        long timeArray = System.currentTimeMillis() - start;
+
+        start = System.currentTimeMillis();
+        HashMap<Integer, Integer> test2 = new HashMap<>();
+        for (int i = 0 ; i < size; i++) {
+            test2.put(i,i);
+        }
+        long timeHashMap = System.currentTimeMillis() - start;
+
+        System.out.println("input arrayInt = " + timeArray + "ms");
+        System.out.println("input hashMap = " + timeHashMap + "ms");
+
+        start = System.currentTimeMillis();
+        for (int i = 0 ; i < size; i++) {
+            int x = test1[i];
+        }
+        timeArray = System.currentTimeMillis() - start;
+
+        start = System.currentTimeMillis();
+        for (int i = 0 ; i < size; i++) {
+            int x = test2.get(i);
+        }
+        timeHashMap = System.currentTimeMillis() - start;
+
+        System.out.println("find arrayInt = " + timeArray + "ms");
+        System.out.println("find hashMap = " + timeHashMap + "ms");
     }
 }
