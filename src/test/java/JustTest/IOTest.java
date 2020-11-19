@@ -29,9 +29,15 @@ public class IOTest {
     }
     @Test
     public void test2 () {
-        String x = "hell";
+        int isServival = 0;
+        String name = "HyunJinWon";
+        for(int i = 0 ; i < name.length() ; i++) {
+            isServival += name.charAt(i);
+            isServival%=2;
+        }
+        System.out.println(isServival);
 
-        assertThat(x.equals("hell"), is(true));
+        assertThat(isServival, is(1));
 
     }
 }
